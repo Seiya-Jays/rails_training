@@ -38,6 +38,11 @@ pidfile ENV.fetch("PIDFILE") { "tmp/pids/server.pid" }
 # process behavior so workers use less memory.
 #
 # preload_app!
+- # preload_app!
++ preload_app!
+
+- # workers ENV.fetch("WEB_CONCURRENCY") { 2 }
++ workers ENV.fetch("WEB_CONCURRENCY") { 4 } # チュートリアルで4になってたので4に修正しました
 
 # Allow puma to be restarted by `bin/rails restart` command.
 plugin :tmp_restart
